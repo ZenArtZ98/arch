@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://texture/world/shrub_1 (1).png" type="Texture" id=1]
+[ext_resource path="res://scene/shrubdamaged.gd" type="Script" id=2]
+[ext_resource path="res://boxes/Hurtbox.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.8333, 7.29167 )
+
+[node name="Grass" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -8 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+scale = Vector2( 0.6, 0.6 )
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 15.8333, 12.7083 )
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
+[editable path="Hurtbox"]

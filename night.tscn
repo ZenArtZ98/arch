@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -749.0
+margin_top = -562.0
+margin_right = 1325.0
+margin_bottom = 675.0
+color = Color( 0, 0, 0, 0.588235 )

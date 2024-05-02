@@ -1,0 +1,137 @@
+[gd_scene load_steps=29 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=45]
+animation = "AttackLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=46]
+animation = "AttackDown"
+
+[sub_resource type="AnimationNodeAnimation" id=47]
+animation = "AttackUp"
+
+[sub_resource type="AnimationNodeAnimation" id=48]
+animation = "AttackRigth"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=42]
+blend_point_0/node = SubResource( 45 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 46 )
+blend_point_1/pos = Vector2( 0, 1.1 )
+blend_point_2/node = SubResource( 47 )
+blend_point_2/pos = Vector2( 0, -1.1 )
+blend_point_3/node = SubResource( 48 )
+blend_point_3/pos = Vector2( 1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=54]
+animation = "BlinkDown"
+
+[sub_resource type="AnimationNodeAnimation" id=55]
+animation = "BlinkUp"
+
+[sub_resource type="AnimationNodeAnimation" id=56]
+animation = "BlinkRigth"
+
+[sub_resource type="AnimationNodeAnimation" id=57]
+animation = "BlinkLeft"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=58]
+blend_point_0/node = SubResource( 54 )
+blend_point_0/pos = Vector2( 0, 1.1 )
+blend_point_1/node = SubResource( 55 )
+blend_point_1/pos = Vector2( 0, -1.1 )
+blend_point_2/node = SubResource( 56 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 57 )
+blend_point_3/pos = Vector2( -1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "IdleRigth"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "IdltLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "IdleDown"
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "IdleUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=25]
+blend_point_0/node = SubResource( 23 )
+blend_point_0/pos = Vector2( 1, 0 )
+blend_point_1/node = SubResource( 24 )
+blend_point_1/pos = Vector2( -1, 0 )
+blend_point_2/node = SubResource( 33 )
+blend_point_2/pos = Vector2( 0, 1.1 )
+blend_point_3/node = SubResource( 34 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "RunRigth"
+
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "RunLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "RunDown"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "RunUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=30]
+blend_point_0/node = SubResource( 28 )
+blend_point_0/pos = Vector2( 1, 0 )
+blend_point_1/node = SubResource( 29 )
+blend_point_1/pos = Vector2( -1, 0 )
+blend_point_2/node = SubResource( 35 )
+blend_point_2/pos = Vector2( 0, 1.1 )
+blend_point_3/node = SubResource( 36 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=59]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=60]
+
+[sub_resource type="AnimationNodeStateMachine" id=15]
+states/Attack/node = SubResource( 42 )
+states/Attack/position = Vector2( 191, 191 )
+states/Blink/node = SubResource( 58 )
+states/Blink/position = Vector2( 191, 11 )
+states/Idle/node = SubResource( 25 )
+states/Idle/position = Vector2( 191, 104 )
+states/Run/node = SubResource( 30 )
+states/Run/position = Vector2( 340, 104 )
+transitions = [ "Idle", "Run", SubResource( 31 ), "Run", "Idle", SubResource( 32 ), "Attack", "Idle", SubResource( 43 ), "Idle", "Attack", SubResource( 44 ), "Blink", "Idle", SubResource( 59 ), "Idle", "Blink", SubResource( 60 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -413, -18.426 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+
+[node name="AnimationTree" type="AnimationTree"]
+tree_root = SubResource( 15 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 16 )
+parameters/Attack/blend_position = Vector2( 0, 1 )
+parameters/Blink/blend_position = Vector2( 0, 1 )
+parameters/Idle/blend_position = Vector2( 0, 1 )
+parameters/Run/blend_position = Vector2( 0, 1 )

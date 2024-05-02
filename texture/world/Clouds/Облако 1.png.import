@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/Облако 1.png-b905fbe674b493d50bf25c028fdc0a8f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://texture/world/Clouds/Облако 1.png"
+dest_files=[ "res://.import/Облако 1.png-b905fbe674b493d50bf25c028fdc0a8f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/Камушки(Серые)_v2_1.png-088f1e90536f350ea3d98505a0d4f3c4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://texture/world/Камушки(Серые)_v2_1.png"
+dest_files=[ "res://.import/Камушки(Серые)_v2_1.png-088f1e90536f350ea3d98505a0d4f3c4.stex" ]
 
 [params]
 
